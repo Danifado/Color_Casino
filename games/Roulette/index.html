@@ -2,17 +2,18 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - CSS Roulette Wheel</title>
+  <title>Roullete</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'><link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<div class="main">
+<div class="roullette">
+  <div class="main">
     <button type="button" class="btn" id="spin"><span class="btn-label">Spin</span></button>
-    <button type="button" class="btn btn-reset" id="reset"><span class="btn-label">New Game</span></button> 
+    <button type="button" class="btn btn-reset" id="reset"><span class="btn-label">New Game</span></button>
     <div class="plate" id="plate">
-        <ul class="inner">
+      <ul class="inner">
         <li class="number"><label><input type="radio" name="pit" value="32" /><span class="pit">32</span></label></li>
         <li class="number"><label><input type="radio" name="pit" value="15" /><span class="pit">15</span></label></li>
         <li class="number"><label><input type="radio" name="pit" value="19" /><span class="pit">19</span></label></li>
@@ -50,22 +51,82 @@
         <li class="number"><label><input type="radio" name="pit" value="3" /><span class="pit">3</span></label></li>
         <li class="number"><label><input type="radio" name="pit" value="26" /><span class="pit">26</span></label></li>
         <li class="number"><label><input type="radio" name="pit" value="0" /><span class="pit">0</span></label></li>
-        </ul>
-        <div class="data">
+      </ul>
+      <div class="data">
         <div class="data-inner">
-            <div class="mask"></div>
-            <div class="result">
+          <div class="mask"></div>
+          <div class="result">
             <div class="result-number">00</div>
-            <div class="result-color">red</div>        
-            </div>
+            <div class="result-color">green</div>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
-  <div class="previous-results">
-    <ol class="previous-list">
-      <li class='visuallyhidden placeholder'>No results yet.</li>
-    </ol>
+    <!-- <div class="previous-results">
+      <ol class="previous-list">
+        <li class='visuallyhidden placeholder'>No results yet.</li>
+      </ol>
+    </div> -->
   </div>
+      <div class="bet-grid">
+        <div class="cero-cell bet-button" id="0">0</div>
+        <div class="inside-bets" id="insBets">
+          <div class="first-12">
+            <div class="bet-button white-cell" id="1">1</div>
+            <div class="bet-button purple-cell" id="2">2</div>
+            <div class="bet-button white-cell" id="3">3</div>
+            <div class="bet-button purple-cell" id="4">4</div>
+            <div class="bet-button white-cell" id="5">5</div>
+            <div class="bet-button purple-cell" id="6">6</div>
+            <div class="bet-button white-cell" id="7">7</div>
+            <div class="bet-button purple-cell" id="8">8</div>
+            <div class="bet-button white-cell" id="9">9</div>
+            <div class="bet-button purple-cell" id="10">10</div>
+            <div class="bet-button purple-cell" id="11">11</div>
+            <div class="bet-button white-cell" id="12">12</div>
+          </div>
+          <div class="second-12">
+            <div class="bet-button purple-cell" id="13">13</div>
+            <div class="bet-button white-cell" id="14">14</div>
+            <div class="bet-button purple-cell" id="15">15</div>
+            <div class="bet-button white-cell" id="16">16</div>
+            <div class="bet-button purple-cell" id="17">17</div>
+            <div class="bet-button white-cell" id="18">18</div>
+            <div class="bet-button white-cell" id="19">19</div>
+            <div class="bet-button purple-cell" id="20">20</div>
+            <div class="bet-button white-cell" id="21">21</div>
+            <div class="bet-button purple-cell" id="22">22</div>
+            <div class="bet-button white-cell" id="23">23</div>
+            <div class="bet-button purple-cell" id="24">24</div>
+          </div>
+          <div class="third-12">
+            <div class="bet-button white-cell" id="25">25</div>
+            <div class="bet-button purple-cell" id="26">26</div>
+            <div class="bet-button white-cell" id="27">27</div>
+            <div class="bet-button purple-cell" id="28">28</div>
+            <div class="bet-button purple-cell" id="29">29</div>
+            <div class="bet-button white-cell" id="30">30</div>
+            <div class="bet-button purple-cell" id="31">31</div>
+            <div class="bet-button white-cell" id="32">32</div>
+            <div class="bet-button purple-cell" id="33">33</div>
+            <div class="bet-button white-cell" id="34">34</div>
+            <div class="bet-button purple-cell" id="35">35</div>
+            <div class="bet-button white-cell" id="36">36</div>
+          </div>
+        </div>
+        <div class="outside-bets" id="outBets">
+          <div type="button" class="bet-button first-12-bet">1st 12</div>
+          <div type="button" class="bet-button second-12-bet">2nd 12</div>
+          <div type="button" class="bet-button third-12-bet">3rd 12</div>
+          <div type="button" class="bet-button one-to-18">1-18</div>
+          <div type="button" class="bet-button even-bet">EVEN</div>
+          <div type="button" class="bet-button white-bet">♦</div>
+          <div type="button" class="bet-button purple-bet">♦</div>
+          <div type="button" class="bet-button odd-bet">ODD</div>
+          <div type="button" class="bet-button nineteen-to-36">19-36</div>
+        </div>
+      </div>
+
 </div>
 <!-- partial -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>

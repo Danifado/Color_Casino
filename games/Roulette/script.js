@@ -6,8 +6,8 @@ var $inner = $('.inner'),
      maskDefault = 'Place Your Bets',
      timer = 9000;
 
-var red = [32,19,21,25,34,27,36,30,23,5,16,1,14,9,18,7,12,3];
-
+var white = [32,19,21,25,34,27,36,30,23,5,16,1,14,9,18,7,12,3];
+var white_2 = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36]
 $reset.hide();
 
 $mask.text(maskDefault);
@@ -15,7 +15,7 @@ $mask.text(maskDefault);
 $spin.on('click',function(){
   
   // get a random number between 0 and 36 and apply it to the nth-child selector
- var  randomNumber = Math.floor(Math.random() * 36),
+ var  randomNumber =  Math.floor(Math.random() * 36),
       color = null;
       $inner.attr('data-spinto', randomNumber).find('li:nth-child('+ randomNumber +') input').prop('checked','checked');
       // prevent repeated clicks on the spin button by hiding it
@@ -40,12 +40,15 @@ $spin.on('click',function(){
   setTimeout(function() {
     $reset.removeClass('disabled').prop('disabled','');
     
-    if($.inArray(randomNumber, red) !== -1){ color = 'red'} else { color = 'black'};
+    if($.inArray(randomNumber, white) !== -1){ color = 'white'} else { color = 'purple'};
     if(randomNumber == 0){color = 'green'};
     
     $('.result-number').text(randomNumber);
     $('.result-color').text(color);
     $('.result').css({'background-color': ''+color+''});
+    if(color == 'white'){
+      document.getElementsByClassName('result')[0].style.color = 'black';
+    }
     $data.addClass('reveal');
     $inner.addClass('rest');
     
@@ -79,3 +82,5 @@ mc.on("swipe", function(ev) {
     }
   }  
 });
+
+// Bet Grid
